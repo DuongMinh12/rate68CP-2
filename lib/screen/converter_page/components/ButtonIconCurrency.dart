@@ -14,20 +14,29 @@ class _ButtonIconCurrencyState extends State<ButtonIconCurrency> {
   Image dropDownValueIcon = listimages.first;
   @override
   Widget build(BuildContext context) {
-    return DropdownButton<Image>(
-      items: listimages.map<DropdownMenuItem<Image>>((Image value) {
-        return DropdownMenuItem<Image>(child: value, value: value);
-      }).toList(),
-      value: dropDownValueIcon,
-      icon: Container(
-        margin: EdgeInsets.only(left: 8),
-          child: Icon(Icons.keyboard_arrow_down_outlined)),
-      underline: const SizedBox(),
-      onChanged: (Image? value) {
-        setState(() {
-          dropDownValueIcon = value!;
-        });
-      },
+    return Row(
+      children: [
+        Container(
+          margin: EdgeInsets.only(right: 10),
+          child: Image.asset(AppImages.line,
+        color: Color(0xFFE6E9EC),),
+        ),
+        DropdownButton<Image>(
+          items: listimages.map<DropdownMenuItem<Image>>((Image value) {
+            return DropdownMenuItem<Image>(child: value, value: value);
+          }).toList(),
+          value: dropDownValueIcon,
+          icon: Container(
+            margin: EdgeInsets.only(left: 8),
+              child: Icon(Icons.keyboard_arrow_down_outlined)),
+          underline: const SizedBox(),
+          onChanged: (Image? value) {
+            setState(() {
+              dropDownValueIcon = value!;
+            });
+          },
+        ),
+      ],
     );
   }
 }
@@ -45,8 +54,8 @@ class CurrencyTo extends StatelessWidget {
       decoration: InputDecoration(
         labelText: 'To',
         hintText: '0.00',
-        suffixIcon: const ButtonIconCurrency(),
-        suffixIconConstraints: BoxConstraints(minWidth: 67, maxHeight: 25),
+        suffixIcon: Container(child: const ButtonIconCurrency()),
+        suffixIconConstraints: BoxConstraints(maxWidth: 80, maxHeight: 25),
         floatingLabelBehavior: FloatingLabelBehavior.always,
         labelStyle: TextStyle(
           fontSize: 16,
@@ -82,7 +91,7 @@ class CurrencyFrom extends StatelessWidget {
         hintText: '0.00',
         floatingLabelBehavior: FloatingLabelBehavior.always,
         suffixIcon: const ButtonIconCurrency(),
-        suffixIconConstraints: BoxConstraints(minWidth: 67, maxHeight: 25),
+        suffixIconConstraints: BoxConstraints(maxWidth: 80, maxHeight: 25),
         labelStyle: TextStyle(
           fontSize: 16,
           fontWeight: w500,

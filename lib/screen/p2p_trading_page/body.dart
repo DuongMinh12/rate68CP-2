@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:testappppp/screen/final_page/final_page.dart';
+import 'package:testappppp/screen/fliter_page/filter_page.dart';
 import 'package:testappppp/screen/p2p_trading_page/data_p2p_trading.dart';
 
 import '../../add_images.dart';
@@ -65,7 +67,7 @@ class BodyP2PTrading extends StatelessWidget {
                     child: GestureDetector(
                       child: Image.asset(AppImages.refresh),
                       onTap: (){
-                        print('heloooooo');
+                        IconButtonNVmaipage1();
                       },
                     ),
                   ),
@@ -77,7 +79,7 @@ class BodyP2PTrading extends StatelessWidget {
                       child: GestureDetector(
                         child: Image.asset(AppImages.filter),
                         onTap: (){
-                          print('holaaaaaa');
+                          IconButtonNVmaipage2();
                         },
                       ),
                     ),
@@ -88,7 +90,7 @@ class BodyP2PTrading extends StatelessWidget {
                 height: 40,
                 width: double.infinity,
                 margin: EdgeInsets.only(bottom: 24),
-                child: TextField(
+                child: TextFormField(
                   decoration: InputDecoration(
                       hintText: 'Amount',
                       hintStyle: TextStyle(
@@ -114,6 +116,32 @@ class BodyP2PTrading extends StatelessWidget {
 
         )
       ],
+    );
+  }
+}
+
+class IconButtonNVmaipage1 extends StatelessWidget {
+
+  @override
+  Widget build(BuildContext context) {
+    return IconButton(onPressed: (){
+      Navigator.pushNamed(context, TestPage.routeName);
+    },
+        icon: const Icon(Icons.close,
+          color: Colors.black,)
+    );
+  }
+}
+
+class IconButtonNVmaipage2 extends StatelessWidget {
+
+  @override
+  Widget build(BuildContext context) {
+    return IconButton(onPressed: (){
+      Navigator.pushNamed(context, FilterPage.routeName);
+    },
+        icon: const Icon(Icons.close,
+          color: Colors.black,)
     );
   }
 }

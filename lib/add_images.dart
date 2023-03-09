@@ -23,5 +23,6 @@ class AppImages{
   static String uspic = link +'US.png';
   static String jppic = link +'JP.png';
   static String ellipse = link + 'Ellipse2.png';
+  static String line = link + 'Line57.png';
 
 }
