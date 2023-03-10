@@ -12,6 +12,8 @@ const boxcolor2 = Color(0x1A000000);
 final grey300 = Colors.grey.shade300;
 final grey500 = Colors.grey.shade500;
 final textcl = Color(0xFF919AA6);
+final arrowclgreen = Color(0xFF16B364);
+final arrowclred = Color(0xFFF04438);
 
 
 // fontweight
@@ -21,4 +23,29 @@ const FontWeight w500 = FontWeight.w500;
 const FontWeight w400 = FontWeight.w400;
 const FontWeight w600 = FontWeight.w600;
 const FontWeight w100 = FontWeight.w100;
+
+
+final TextStyle stylew4g5s12 = TextStyle(
+  fontWeight: w400,
+  color: grey500,
+  fontSize: 12,
+);
+
+final TextStyle stylew4g9s12 = TextStyle(
+  fontWeight: w400,
+  color: grey900,
+  fontSize: 12,
+);
+
+final TextStyle stylew6greens12 = TextStyle(
+  fontWeight: w600,
+  color: arrowclgreen,
+  fontSize: 12,
+);
+
+final TextStyle stylew6reds12 = TextStyle(
+  fontWeight: w600,
+  color: arrowclred,
+  fontSize: 12,
+);
 

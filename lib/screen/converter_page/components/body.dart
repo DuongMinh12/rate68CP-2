@@ -3,6 +3,7 @@ import 'package:testappppp/add_images.dart';
 import 'package:testappppp/constants.dart';
 import 'package:testappppp/screen/converter_page/components/ButtonIconCurrency.dart';
 import 'package:testappppp/screen/final_page/components/ButtonIconDd.dart';
+import 'package:testappppp/final_page.dart';
 
 class bodyConverter extends StatelessWidget {
   const bodyConverter({
@@ -96,7 +97,9 @@ class bodyConverter extends StatelessWidget {
                   ),
                 ),
                 ElevatedButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.pushNamed(context, TestPage.routeName);
+                  },
                   child: Text(
                     'View Result',
                     style: TextStyle(

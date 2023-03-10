@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:testappppp/screen/final_page/final_page.dart';
-import 'package:testappppp/screen/fliter_page/filter_page.dart';
+import 'package:testappppp/screen/fliter_page/body_filter_page.dart';
 import 'package:testappppp/screen/p2p_trading_page/data_p2p_trading.dart';
-
+import 'package:testappppp/screen/refresh_page.dart';
 import '../../add_images.dart';
 import '../../constants.dart';
 
@@ -67,7 +66,14 @@ class BodyP2PTrading extends StatelessWidget {
                     child: GestureDetector(
                       child: Image.asset(AppImages.refresh),
                       onTap: (){
-                        IconButtonNVmaipage1();
+                        showModalBottomSheet(
+                          shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.vertical(top: Radius.circular(12))
+                          ),
+                            context: context, builder: (BuildContext context){
+                          return BodyRefresh();
+                        }
+                        );
                       },
                     ),
                   ),
@@ -79,7 +85,15 @@ class BodyP2PTrading extends StatelessWidget {
                       child: GestureDetector(
                         child: Image.asset(AppImages.filter),
                         onTap: (){
-                          IconButtonNVmaipage2();
+                          showBottomSheet(
+                            backgroundColor: Colors.white,
+                              shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.vertical(top: Radius.circular(12))
+                              ),
+                              context: context, builder: (BuildContext context){
+                            return BodyFilterPage();
+                          });
+                          // print('hi');
                         },
                       ),
                     ),
@@ -116,32 +130,6 @@ class BodyP2PTrading extends StatelessWidget {
 
         )
       ],
-    );
-  }
-}
-
-class IconButtonNVmaipage1 extends StatelessWidget {
-
-  @override
-  Widget build(BuildContext context) {
-    return IconButton(onPressed: (){
-      Navigator.pushNamed(context, TestPage.routeName);
-    },
-        icon: const Icon(Icons.close,
-          color: Colors.black,)
-    );
-  }
-}
-
-class IconButtonNVmaipage2 extends StatelessWidget {
-
-  @override
-  Widget build(BuildContext context) {
-    return IconButton(onPressed: (){
-      Navigator.pushNamed(context, FilterPage.routeName);
-    },
-        icon: const Icon(Icons.close,
-          color: Colors.black,)
     );
   }
 }

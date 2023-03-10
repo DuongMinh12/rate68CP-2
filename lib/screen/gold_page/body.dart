@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:testappppp/add_images.dart';
 import 'package:testappppp/constants.dart';
 import 'package:testappppp/component/searchbar.dart';
+import 'package:testappppp/final_page.dart';
 
 class BodyGoldPage extends StatelessWidget {
   const BodyGoldPage({
@@ -58,7 +59,9 @@ class BodyGoldPage extends StatelessWidget {
                 ),
               ),
               SearchBartxt(),
-
+              Container(
+                  child: BodyGoldPage(),
+              height: 500,),
             ],
           ),
         )
