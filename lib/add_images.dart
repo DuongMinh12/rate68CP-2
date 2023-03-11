@@ -24,5 +24,8 @@ class AppImages{
   static String jppic = link +'JP.png';
   static String ellipse = link + 'Ellipse2.png';
   static String line = link + 'Line57.png';
+  static String searchim = link + 'Search.png';
+  static String usdt = link + 'USDT.png';
+  static String background = link + 'Background.png';
 
 }

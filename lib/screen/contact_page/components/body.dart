@@ -12,12 +12,14 @@ class Body_contact_page extends StatelessWidget {
     return Column(
       children: [
         Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 24),
+          padding: const EdgeInsets.only(left: 16, right: 16, bottom: 24, top: 60),
           child: Container(
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(30),
               // color: Colors.blueAccent,
-              gradient: const LinearGradient(begin: Alignment.topCenter, end: Alignment.bottomCenter, colors: [blueBgContactpageTop, blueBgContactpageBottom]),
+              gradient: const LinearGradient(begin: Alignment.topCenter,
+                  end: Alignment.bottomCenter,
+                  colors: [blueBgContactpageTop, blueBgContactpageBottom]),
             ),
             child: Padding(
               padding: const EdgeInsets.only(top: 40, left: 24, right: 24),

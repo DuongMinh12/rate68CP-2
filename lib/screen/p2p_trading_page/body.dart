@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:testappppp/component/page_change_button.dart';
 import 'package:testappppp/screen/fliter_page/body_filter_page.dart';
 import 'package:testappppp/screen/p2p_trading_page/data_p2p_trading.dart';
+import 'package:testappppp/screen/p2p_trading_page/search_txt.dart';
 import 'package:testappppp/screen/refresh_page.dart';
 import '../../add_images.dart';
 import '../../constants.dart';
@@ -100,31 +102,12 @@ class BodyP2PTrading extends StatelessWidget {
                   ),
                 ],
               ),
+              SearchTxt(),
               Container(
-                height: 40,
-                width: double.infinity,
-                margin: EdgeInsets.only(bottom: 24),
-                child: TextFormField(
-                  decoration: InputDecoration(
-                      hintText: 'Amount',
-                      hintStyle: TextStyle(
-                        fontWeight: w400,
-                        fontSize: 12,
-                        color: grey400,
-                      ),
-                      contentPadding: EdgeInsets.symmetric(vertical: 12, horizontal: 16),
-                      border: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(8),
-                      ),
-                    suffixText: 'bhubhbb',
-                    floatingLabelBehavior: FloatingLabelBehavior.always,
-                  ),
-                ),
-              ),
-              Container(
-                height: 884,
+                height: 840,
                   width: double.infinity,
                   child: const DataP2PTrading()),
+              PageChangeButton(),
             ],
           ),
 
@@ -133,3 +116,4 @@ class BodyP2PTrading extends StatelessWidget {
     );
   }
 }
+

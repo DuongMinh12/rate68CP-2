@@ -26,83 +26,59 @@ class BodyDataGold extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        Container(
-          padding: const EdgeInsets.symmetric(vertical: 12, horizontal: 16),
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(8),
-            color: Colors.grey.shade100,
+    return Container(
+      // height: 600,
+      width: 160,
+      child: Column(
+        children: [
+          Container(
+            padding: const EdgeInsets.symmetric(vertical: 12, horizontal: 16),
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(8),
+              color: Colors.grey.shade100,
+            ),
+            // height: 600,
+            child: Row(
+              children: [
+                Expanded(
+                  child: Text(
+                    'Name',
+                    style: stylew4g5s12,
+                  ),
+                  flex: 1,
+                ),
+                Expanded(
+                  child: Text(
+                    'Buy',
+                    style: stylew4g5s12,
+                  ),
+                  flex: 1,
+                ),
+                Expanded(
+                  child: Text(
+                    'Sell',
+                    style: stylew4g5s12,
+                  ),
+                  flex: 1,
+                ),
+              ],
+            ),
           ),
-          child: Row(
-            children: [
-              Expanded(
-                child: Text(
-                  'Name',
-                  style: stylew4g5s12,
-                ),
-                flex: 1,
-              ),
-              // Spacer(),
-              // Text(
-              //   'Buy',
-              //   style: stylew4g5s12,
-              // ),
-              // Spacer(),
-              // Text(
-              //   'Sell',
-              //   style: stylew4g5s12,
-              // ),
-              // Spacer(),
-              // Text('Chart', style: stylew4g5s12,),
-              Expanded(
-                child: Text(
-                  'Buy',
-                  style: stylew4g5s12,
-                ),
-                flex: 1,
-              ),
-              Expanded(
-                child: Text(
-                  'Sell',
-                  style: stylew4g5s12,
-                ),
-                flex: 1,
-              ),
-            ],
-          ),
-        ),
-        Container(
-          height: 500,
-          child: ListView.builder(
-            itemCount: 4,
-              itemBuilder: (BuildContext context, int indext){
-              return DataGold();
-              }),
-        ),
-
-        // ListTile(
-        //   leading: Text('USD/VND'),
-        //   trailing: Text('jkbjbkj'),
-        //   title: Row(
-        //     children: [
-        //       TextListTitle(),
-        //     ],
-        //   ),
-        //   subtitle: Row(
-        //     children: [
-        //       Icon(Icons.arrow_drop_up, color:arrowclgreen,),
-        //       Text('9',
-        //         style: stylew6greens12,),
-        //     ],
-        //   ),
-        //
-        // )
-      ],
+          // Container(
+          //   height: 500,
+          //   child: ListView.builder(
+          //     itemCount: 3,
+          //       itemBuilder: (BuildContext context, int indext){
+          //       return DataGold();
+          //       }),
+          // ),
+          // DataGold(),
+        ],
+      ),
     );
   }
 }
-
+//
 class DataGold extends StatelessWidget {
   const DataGold({
     Key? key,
@@ -241,19 +217,3 @@ class DataGold extends StatelessWidget {
   }
 }
 
-// class TextListTitle extends StatelessWidget {
-//   const TextListTitle({
-//     Key? key,
-//   }) : super(key: key);
-//   @override
-//   Widget build(BuildContext context) {
-//     return Container(
-//       child: Text(
-//         '24,121',
-//         style: stylew4g9s12,
-//       ),
-//       color: Colors.blue,
-//       margin: EdgeInsets.all(8),
-//     );
-//   }
-// }

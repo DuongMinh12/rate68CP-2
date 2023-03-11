@@ -60,7 +60,7 @@ class TableViewData extends StatelessWidget {
                           width: 16,),),
                       Padding(
                         padding: const EdgeInsets.only(right: 8),
-                        child: Image.asset(AppImages.uspic),
+                        child: Image.asset(AppImages.jppic),
                       ),
                       Text('USD',
                         style: TextStyle(
@@ -100,6 +100,18 @@ class TableViewData extends StatelessWidget {
     );
   }
 }
+
+// class ImageChangeFlag extends StatelessWidget {
+//    ImageChangeFlag({
+//     Key? key, required this.changeimage,
+//   }) : super(key: key);
+//
+//   String changeimage ;
+//   @override
+//   Widget build(BuildContext context) {
+//     return Image.asset(changeimage);
+//   }
+// }
 
 class Data extends StatefulWidget {
   const Data({super.key, required this.title, required this.titles});

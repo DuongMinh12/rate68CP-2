@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:testappppp/add_images.dart';
+import 'package:testappppp/component/divider.dart';
+import 'package:testappppp/component/page_change_button.dart';
 import 'package:testappppp/constants.dart';
 import 'package:testappppp/component/searchbar.dart';
-import 'package:testappppp/final_page.dart';
+
+import 'data_gold.dart';
 
 class BodyGoldPage extends StatelessWidget {
   const BodyGoldPage({
@@ -17,7 +20,7 @@ class BodyGoldPage extends StatelessWidget {
         Container(
           margin: EdgeInsets.only(left: 16, right: 16, top: 20, bottom: 20),
           padding: EdgeInsets.all(16),
-          height: 708,
+          height: 713,
           width: double.infinity,
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(12),
@@ -29,16 +32,6 @@ class BodyGoldPage extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              // Text('Gold',
-              //   style: TextStyle(
-              //     fontSize: 18,
-              //     fontWeight: FontWeight.w600,
-              //     color: grey900,
-              //     decoration: TextDecoration.underline,
-              //     decorationColor: kMainColor,
-              //     decorationThickness: 2,
-              //   ),
-              // ),
               Container(
                 padding: const EdgeInsets.only(
                   bottom: 5, // Space between underline and text
@@ -59,9 +52,54 @@ class BodyGoldPage extends StatelessWidget {
                 ),
               ),
               SearchBartxt(),
-              Container(
-                  child: BodyGoldPage(),
-              height: 500,),
+             Column(
+               children: [
+                 Container(
+                   padding: const EdgeInsets.symmetric(vertical: 12, horizontal: 16),
+                   margin: EdgeInsets.only(bottom: 8),
+                   decoration: BoxDecoration(
+                     borderRadius: BorderRadius.circular(8),
+                     color: Colors.grey.shade100,
+                   ),
+                   // height: 600,
+                   child: Row(
+                     children: [
+                       Expanded(
+                         child: Text(
+                           'Name',
+                           style: stylew4g5s12,
+                         ),
+                         flex: 1,
+                       ),
+                       Expanded(
+                         child: Text(
+                           'Buy',
+                           style: stylew4g5s12,
+                         ),
+                         flex: 1,
+                       ),
+                       Expanded(
+                         child: Text(
+                           'Sell',
+                           style: stylew4g5s12,
+                         ),
+                         flex: 1,
+                       ),
+                     ],
+                   ),
+                 ),
+                 Container(
+                   height: 450,
+                   width: double.infinity,
+                   child: ListView.builder(
+                       itemCount: 4,
+                       itemBuilder: (BuildContext context, int indext){
+                         return DataGold();
+                       }),
+                 ),
+                 PageChangeButton(),
+               ],
+             )
             ],
           ),
         )

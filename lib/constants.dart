@@ -14,7 +14,7 @@ final grey500 = Colors.grey.shade500;
 final textcl = Color(0xFF919AA6);
 final arrowclgreen = Color(0xFF16B364);
 final arrowclred = Color(0xFFF04438);
-
+final grey200 = Colors.grey.shade200;
 
 // fontweight
 

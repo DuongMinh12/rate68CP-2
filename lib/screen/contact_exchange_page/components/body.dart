@@ -4,6 +4,8 @@ import 'package:testappppp/constants.dart';
 import 'package:testappppp/screen/contact_exchange_page/components/data_contac_exchange.dart';
 import 'package:testappppp/component/searchbar.dart';
 
+import '../../../component/page_change_button.dart';
+
 class ContactExchange extends StatelessWidget {
   const ContactExchange({
     Key? key,
@@ -17,7 +19,7 @@ class ContactExchange extends StatelessWidget {
         Container(
           margin: EdgeInsets.only(left: 16, right: 16, top: 20),
           padding: EdgeInsets.all(16),
-          height: 800,
+          height: 760,
           width: double.infinity,
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(12),
@@ -65,6 +67,7 @@ class ContactExchange extends StatelessWidget {
               ),
               SearchBartxt(),
               DataContactExchange(),
+              PageChangeButton()
             ],
           ),
         )

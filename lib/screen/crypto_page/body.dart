@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:testappppp/add_images.dart';
+import 'package:testappppp/component/page_change_button.dart';
 import 'package:testappppp/constants.dart';
 import 'package:testappppp/component/searchbar.dart';
+import 'package:testappppp/screen/crypto_page/data_crypto.dart';
 
 class BodyCrytoPage extends StatelessWidget {
   const BodyCrytoPage({
@@ -16,7 +18,7 @@ class BodyCrytoPage extends StatelessWidget {
         Container(
           margin: EdgeInsets.only(left: 16, right: 16, bottom: 20),
           padding: EdgeInsets.all(16),
-          height: 708,
+          height: 713,
           width: double.infinity,
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(12),
@@ -48,7 +50,54 @@ class BodyCrytoPage extends StatelessWidget {
                 ),
               ),
               SearchBartxt(),
-
+              Column(
+                children: [
+                  Container(
+                    padding: const EdgeInsets.symmetric(vertical: 12, horizontal: 16),
+                    margin: EdgeInsets.only(bottom: 8),
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(8),
+                      color: Colors.grey.shade100,
+                    ),
+                    // height: 600,
+                    child: Row(
+                      children: [
+                        Expanded(
+                          child: Text(
+                            'Name',
+                            style: stylew4g5s12,
+                          ),
+                          flex: 1,
+                        ),
+                        Expanded(
+                          child: Text(
+                            'Buy',
+                            style: stylew4g5s12,
+                          ),
+                          flex: 1,
+                        ),
+                        Expanded(
+                          child: Text(
+                            'Sell',
+                            style: stylew4g5s12,
+                          ),
+                          flex: 1,
+                        ),
+                      ],
+                    ),
+                  ),
+                  Container(
+                    height: 450,
+                    width: double.infinity,
+                    child: ListView.builder(
+                        itemCount: 4,
+                        itemBuilder: (BuildContext context, int indext){
+                          return DataCrypto();
+                        }),
+                  ),
+                  PageChangeButton()
+                ],
+              )
             ],
           ),
         )
