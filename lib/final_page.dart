@@ -14,205 +14,54 @@ class TestPage extends StatelessWidget {
       appBar: AppBar(
         title: Text('Test Page'),
       ),
-      body: BodyDataGold(),
+      body: Center(
+        child: NewWidget(),
+      )
     );
   }
 }
 
-class BodyDataGold extends StatelessWidget {
-  const BodyDataGold({
+class NewWidget extends StatefulWidget {
+  const NewWidget({
     Key? key,
   }) : super(key: key);
 
   @override
+  State<NewWidget> createState() => _NewWidgetState();
+}
+
+class _NewWidgetState extends State<NewWidget> {
+  bool ihidebutton = true;
+  @override
   Widget build(BuildContext context) {
-    return Container(
-      // height: 600,
-      width: 160,
-      child: Column(
-        children: [
-          Container(
-            padding: const EdgeInsets.symmetric(vertical: 12, horizontal: 16),
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(8),
-              color: Colors.grey.shade100,
-            ),
-            // height: 600,
-            child: Row(
-              children: [
-                Expanded(
-                  child: Text(
-                    'Name',
-                    style: stylew4g5s12,
-                  ),
-                  flex: 1,
-                ),
-                Expanded(
-                  child: Text(
-                    'Buy',
-                    style: stylew4g5s12,
-                  ),
-                  flex: 1,
-                ),
-                Expanded(
-                  child: Text(
-                    'Sell',
-                    style: stylew4g5s12,
-                  ),
-                  flex: 1,
-                ),
-              ],
-            ),
+    return ElevatedButton(
+      onPressed: () {
+        // Navigator.pushNamed(context, TotalPage.routeName);
+      setState(() {
+        ihidebutton =! ihidebutton;
+      });
+      },
+      child: Container(
+        padding: const EdgeInsets.symmetric(vertical: 8),
+        child: Text(
+         'Test aa',
+          style: const TextStyle(
+            fontSize: 16,
+            color: Colors.black,
           ),
-          // Container(
-          //   height: 500,
-          //   child: ListView.builder(
-          //     itemCount: 3,
-          //       itemBuilder: (BuildContext context, int indext){
-          //       return DataGold();
-          //       }),
-          // ),
-          // DataGold(),
-        ],
+        ),
       ),
-    );
-  }
-}
-//
-class DataGold extends StatelessWidget {
-  const DataGold({
-    Key? key,
-  }) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Column(
-      children: [
-        Container(
-          // color: Colors.blue,
-          padding: EdgeInsets.symmetric(horizontal: 16,vertical: 8),
-          child: Row(
-            children: [
-              Expanded(
-                child: Text('Gold SJC'),
-                flex: 1,
-              ),
-              Expanded(
-                flex: 1,
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      '24,121',
-                      style: stylew4g9s12,
-                    ),
-                    Row(
-                      children: [
-                        Icon(
-                          Icons.arrow_drop_up,
-                          color: arrowclgreen,
-                        ),
-                        Text(
-                          '9',
-                          style: stylew6greens12,
-                        ),
-                      ],
-                    )
-                  ],
-                ),
-              ),
-              Expanded(
-                flex: 1,
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      '24,121',
-                      style: stylew4g9s12,
-                    ),
-                    Row(
-                      children: [
-                        Icon(
-                          Icons.arrow_drop_up,
-                          color: arrowclgreen,
-                        ),
-                        Text(
-                          '9',
-                          style: stylew6greens12,
-                        ),
-                      ],
-                    )
-                  ],
-                ),
+      style: ElevatedButton.styleFrom(
+          elevation: 0,
+          backgroundColor: Colors.white,
+          shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(30),
+              side: BorderSide(
+                color: ihidebutton? kMainColor : Colors.white,
+                width: 2,
               )
-            ],
-          ),
-        ),
-        DividerG200(),
-        Container(
-          padding: EdgeInsets.symmetric(horizontal: 16,vertical: 8),
-          child: Container(
-            padding: EdgeInsets.symmetric(horizontal: 16, vertical: 8),
-            child: Row(
-              children: [
-                Expanded(
-                  child: Text('Gold 95%'),
-                  flex: 1,
-                ),
-                Expanded(
-                  flex: 1,
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(
-                        '24,121',
-                        style: stylew4g9s12,
-                      ),
-                      Row(
-                        children: [
-                          Icon(
-                            Icons.arrow_drop_down,
-                            color: arrowclred,
-                          ),
-                          Text(
-                            '-0.02',
-                            style: stylew6reds12,
-                          ),
-                        ],
-                      )
-                    ],
-                  ),
-                ),
-                Expanded(
-                  flex: 1,
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(
-                        '24,121',
-                        style: stylew4g9s12,
-                      ),
-                      Row(
-                        children: [
-                          Icon(
-                            Icons.arrow_drop_down,
-                            color: arrowclred,
-                          ),
-                          Text(
-                            '-0.02',
-                            style: stylew6reds12,
-                          ),
-                        ],
-                      )
-                    ],
-                  ),
-                ),
-              ],
-            ),
-          ),
-        ),
-        DividerG200(),
-      ],
+          )
+      ),
     );
   }
 }

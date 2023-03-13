@@ -4,6 +4,9 @@ import 'package:testappppp/constants.dart';
 import 'package:testappppp/screen/main_page/components/button_dropDown.dart';
 import 'package:testappppp/screen/total_page/total_page.dart';
 
+
+List<String> titles = ['Converter', 'Live Rate', 'P2P trading', 'Download App'];
+
 class Body extends StatefulWidget {
   Body({
     Key? key,
@@ -14,8 +17,6 @@ class Body extends StatefulWidget {
 }
 
 class _BodyState extends State<Body> {
-  List<String> titles = ['Converter', 'Live Rate', 'P2P trading', 'Download App'];
-
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -98,9 +99,11 @@ class _BodyState extends State<Body> {
 
 class ButtonSizeBox extends StatefulWidget {
   final String title;
-  const ButtonSizeBox({
+  // int id;
+   ButtonSizeBox({
     super.key,
     required this.title,
+    // required this.id,
   });
 
   @override
@@ -111,44 +114,51 @@ class _ButtonSizeBoxState extends State<ButtonSizeBox> {
   var isHover = false;
   @override
   Widget build(BuildContext context) {
-    return MouseRegion(
-      onHover: (event) {
+    return ElevatedButton(
+      onPressed: (){
         setState(() {
-          isHover = true;
+          isHover=!isHover;
         });
-      },
-      onExit: (event) {
-        setState(() {
-          isHover = false;
-        });
-      },
-      child: ElevatedButton(
-        onPressed: () {
-          Navigator.pushNamed(context, TotalPage.routeName);
         },
-        child: Container(
-          padding: const EdgeInsets.symmetric(vertical: 8),
-          child: Text(
-            widget.title,
-            style: const TextStyle(
-              fontSize: 16,
-              color: Colors.black,
-            ),
+      child: Container(
+        padding: const EdgeInsets.symmetric(vertical: 8),
+        child: Text(
+          widget.title,
+          style: const TextStyle(
+            fontSize: 16,
+            color: Colors.black,
           ),
         ),
-        style: ElevatedButton.styleFrom(
+      ),
+      style: ElevatedButton.styleFrom(
           elevation: 0,
           backgroundColor: Colors.white,
           shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(30),
-            side: BorderSide(
-              color: isHover? kMainColor :Colors.white,
-              width: 2,
-            )
+              borderRadius: BorderRadius.circular(30),
+              side: BorderSide(
+                color: isHover? kMainColor :Colors.white,
+                width: 2,
+              )
           )
-        ),
       ),
     );
   }
 }
+
+class TabControl extends StatefulWidget {
+  const TabControl({Key? key}) : super(key: key);
+
+  @override
+  State<TabControl> createState() => _TabControlState();
+}
+
+class _TabControlState extends State<TabControl> {
+  @override
+  Widget build(BuildContext context) {
+    return Container();
+  }
+}
+
+
+
 

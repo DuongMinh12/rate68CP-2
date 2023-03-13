@@ -69,6 +69,7 @@ class BodyP2PTrading extends StatelessWidget {
                       child: Image.asset(AppImages.refresh),
                       onTap: (){
                         showModalBottomSheet(
+                          backgroundColor: Colors.white,
                           shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.vertical(top: Radius.circular(12))
                           ),
