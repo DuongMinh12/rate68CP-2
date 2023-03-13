@@ -17,21 +17,62 @@ class Body extends StatefulWidget {
 }
 
 class _BodyState extends State<Body> {
+  int selected =0;
+  Widget RadioCustom (String txt, int index){
+    return ElevatedButton(
+      onPressed: (){
+        setState(() {
+          selected = index;
+        });
+      },
+      child: Container(
+        padding: const EdgeInsets.symmetric(vertical: 8),
+        alignment: Alignment.center,
+        width: double.infinity,
+        child: Text(
+          txt,
+          style: const TextStyle(
+            fontSize: 16,
+            color: Colors.black,
+          ),
+        ),
+      ),
+      style: ElevatedButton.styleFrom(
+          elevation: 0,
+          backgroundColor: Colors.white,
+          shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(30),
+              side: BorderSide(
+                color: (selected == index)? kMainColor :Colors.white,
+                width: 2,
+              )
+          )
+      ),
+    );
+  }
   @override
   Widget build(BuildContext context) {
     return Column(
       children: [
         SizedBox(
-          height: 270,
+          height: 273,
           child: Padding(
-            padding: const EdgeInsets.symmetric(vertical: 40, horizontal: 16),
-            child: ListView.builder(
-                itemCount: titles.length,
-                itemBuilder: (BuildContext context, int index) {
-                  return ButtonSizeBox(
-                    title: titles[index],
-                  );
-                }),
+            padding: EdgeInsets.symmetric(vertical: 40, horizontal: 16),
+            child: Column(
+              children: [
+                RadioCustom('Converter', 1),
+                RadioCustom('Live Rate', 2),
+                RadioCustom('P2P Trading', 3),
+                RadioCustom('Download App', 4),
+              ],
+            ),
+            // child: ListView.builder(
+            //     itemCount: titles.length,
+            //     itemBuilder: (BuildContext context, int index) {
+            //       return ButtonSizeBox(
+            //         title: titles[index],
+            //       );
+            //     }),
           ),
         ),
         Column(
@@ -97,67 +138,53 @@ class _BodyState extends State<Body> {
   }
 }
 
-class ButtonSizeBox extends StatefulWidget {
-  final String title;
-  // int id;
-   ButtonSizeBox({
-    super.key,
-    required this.title,
-    // required this.id,
-  });
-
-  @override
-  State<ButtonSizeBox> createState() => _ButtonSizeBoxState();
-}
-
-class _ButtonSizeBoxState extends State<ButtonSizeBox> {
-  var isHover = false;
-  @override
-  Widget build(BuildContext context) {
-    return ElevatedButton(
-      onPressed: (){
-        setState(() {
-          isHover=!isHover;
-        });
-        },
-      child: Container(
-        padding: const EdgeInsets.symmetric(vertical: 8),
-        child: Text(
-          widget.title,
-          style: const TextStyle(
-            fontSize: 16,
-            color: Colors.black,
-          ),
-        ),
-      ),
-      style: ElevatedButton.styleFrom(
-          elevation: 0,
-          backgroundColor: Colors.white,
-          shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(30),
-              side: BorderSide(
-                color: isHover? kMainColor :Colors.white,
-                width: 2,
-              )
-          )
-      ),
-    );
-  }
-}
-
-class TabControl extends StatefulWidget {
-  const TabControl({Key? key}) : super(key: key);
-
-  @override
-  State<TabControl> createState() => _TabControlState();
-}
-
-class _TabControlState extends State<TabControl> {
-  @override
-  Widget build(BuildContext context) {
-    return Container();
-  }
-}
+// class ButtonSizeBox extends StatefulWidget {
+//   final String title;
+//   // int id;
+//    ButtonSizeBox({
+//     super.key,
+//     required this.title,
+//     // required this.id,
+//   });
+//
+//   @override
+//   State<ButtonSizeBox> createState() => _ButtonSizeBoxState();
+// }
+//
+// class _ButtonSizeBoxState extends State<ButtonSizeBox> {
+//   var isHover = false;
+//   @override
+//   Widget build(BuildContext context) {
+//     return ElevatedButton(
+//       onPressed: (){
+//         setState(() {
+//           isHover=!isHover;
+//         });
+//         },
+//       child: Container(
+//         padding: const EdgeInsets.symmetric(vertical: 8),
+//         child: Text(
+//           widget.title,
+//           style: const TextStyle(
+//             fontSize: 16,
+//             color: Colors.black,
+//           ),
+//         ),
+//       ),
+//       style: ElevatedButton.styleFrom(
+//           elevation: 0,
+//           backgroundColor: Colors.white,
+//           shape: RoundedRectangleBorder(
+//               borderRadius: BorderRadius.circular(30),
+//               side: BorderSide(
+//                 color: isHover? kMainColor :Colors.white,
+//                 width: 2,
+//               )
+//           )
+//       ),
+//     );
+//   }
+// }
 
 
 
