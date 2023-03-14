@@ -46,7 +46,7 @@ class IconButtonNVmaipage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return IconButton(onPressed: (){
-      Navigator.pushNamed(context, TotalPage.routeName);
+      Navigator.pop(context);
     },
         icon: const Icon(Icons.close,
           color: Colors.black,)

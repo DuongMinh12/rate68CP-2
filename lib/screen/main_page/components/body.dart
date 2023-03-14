@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import 'package:testappppp/add_images.dart';
 import 'package:testappppp/constants.dart';
 import 'package:testappppp/screen/main_page/components/button_dropDown.dart';
 import 'package:testappppp/screen/total_page/total_page.dart';
 
 
-List<String> titles = ['Converter', 'Live Rate', 'P2P trading', 'Download App'];
+// List<String> titles = ['Converter', 'Live Rate', 'P2P trading', 'Download App'];
 
 class Body extends StatefulWidget {
   Body({
@@ -17,12 +18,31 @@ class Body extends StatefulWidget {
 }
 
 class _BodyState extends State<Body> {
+
+  @override
+  void initState(){
+    super.initState();
+    loadDataa();
+  }
+
+  void loadDataa() async {
+    SharedPreferences pref = await SharedPreferences.getInstance();
+    setState(() {
+      saveTab = pref.getInt('save') ?? 0;
+    });
+  }
+
+  int? saveTab;
   int selected =0;
+
   Widget RadioCustom (String txt, int index){
     return ElevatedButton(
-      onPressed: (){
+      onPressed: () async{
+        SharedPreferences pref = await SharedPreferences.getInstance();
         setState(() {
           selected = index;
+          saveTab = 0;
+          pref.setInt('save', index);
         });
       },
       child: Container(
@@ -43,7 +63,7 @@ class _BodyState extends State<Body> {
           shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(30),
               side: BorderSide(
-                color: (selected == index)? kMainColor :Colors.white,
+                color: (selected == index || saveTab == index)? kMainColor :Colors.white,
                 width: 2,
               )
           )

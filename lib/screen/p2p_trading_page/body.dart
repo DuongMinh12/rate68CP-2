@@ -3,7 +3,7 @@ import 'package:testappppp/component/page_change_button.dart';
 import 'package:testappppp/screen/fliter_page/body_filter_page.dart';
 import 'package:testappppp/screen/p2p_trading_page/data_p2p_trading.dart';
 import 'package:testappppp/screen/p2p_trading_page/search_txt.dart';
-import 'package:testappppp/screen/refresh_page.dart';
+import 'package:testappppp/screen/refresh_page/refresh_page.dart';
 import '../../add_images.dart';
 import '../../constants.dart';
 
